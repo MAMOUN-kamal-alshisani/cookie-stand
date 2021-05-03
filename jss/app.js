@@ -5,30 +5,36 @@ const workhours=['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm
 // random function
 function random(min,max){
     return Math.floor(Math.random() * (max - min + 1) + min);
+    
+
 }
 
-const Seattle = {
-    location: 'Seattle',
-    minCustomers: 23,
-    maxCustomers: 65,
-    avgCookies: 6.3,
-    customersPerHour: [],
-    cookiesPerHour: [],
-    dailyTotal: 0,
+const store =function ( storelocation , name , minCustomers , maxCustomers, avgcookies ,){
+this.name = name;
+this.storelocation = seattle;
+this.minCustomers = minCustomers;
+this.maxCustomers = maxCustomers;
+this.avgcookies = avgcookies;
+this.workhours = [];
+this.open_time = open_time;
+this.close_time = close_time;
+}
+   
+
 
 // calculate a random number of customers every hour :
-calcCustomersPerHour: function(){
+calcCustomersPerHour: function() {
 for (let i=0; i<workhours.length; i++){
 
 this.customersPerHour[i]=(random(this.minCustomers, this.maxCustomers));
 }
-},
+};
 calcCookiesPerHour:function(){
    for (let i=0;i<workhours.length;i++){
 this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookies));
 this.dailyTotal+=this.cookiesPerHour[i]
 }
-},
+};
 renderfunction:function(){
 let theparent=document.getElementById('parent');
 console.log(theparent);
@@ -61,7 +67,7 @@ Seattle.calcCookiesPerHour();
 Seattle.renderfunction();
 
 
-
+/*
 
 
 function random(min,max){
@@ -306,3 +312,4 @@ Lima.calcCookiesPerHour();
 Lima.renderfunction();
 
 
+*/
