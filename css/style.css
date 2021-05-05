@@ -3,3 +3,10 @@ img {
 width:300px;
 
 }
+
+
+table, th, td{
+    border:1px solid gray;
+
+
+}
