@@ -83,6 +83,29 @@ City.prototype.render = function () {
 };
 
 
+//SEATTLE CITY
+const seattle = new City('Seattle', 23, 65, 6.3, []);
+seattle.getNumOfCookies();
+seattle.render();
+//TOKYO CITY
+const tokyo = new City('Tokyo', 3, 24, 1.2, []);
+tokyo.getNumOfCookies();
+tokyo.render();
+//DUBAI CITY
+const dubai = new City('Dubai', 11, 38, 3.7, []);
+dubai.getNumOfCookies();
+dubai.render();
+//PARIS CITY
+const paris = new City('Paris', 20, 38, 2.3, []);
+paris.getNumOfCookies();
+paris.render();
+//LIMA CITY
+const lima = new City('Lima', 2, 16, 4.6, []);
+lima.getNumOfCookies();
+lima.render();
+
+console.log(City.allCity);
+
 
 
 
