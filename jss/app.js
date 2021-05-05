@@ -47,7 +47,7 @@ City.prototype.getNumOfCookies = function () {
 
 let parent = document.getElementById('parent')
  let table = document.createElement('table');
-  parent.appendChild(table);
+  parent.appendChild('table');
   
   function header(){
   
