@@ -161,8 +161,11 @@ thelastraw();
 
 
 
+
 //places[i].calcCustomersPerHour();
 //places[i].calcCookiesEveryHour();
+
+
 /*
 
 
