@@ -139,7 +139,8 @@ let lastTh=document.createElement('th');
 lastRow.appendChild(lastTh);
 lastTh.textContent='totals';
 
-let copycat=["6 am","7 am","8 am","9 am","10 am","11 am","12 pm","1 pm","2 pm","3 pm","4 pam","5 pam","6 pm","7 pm","gggg"];
+let copycat=["6 am","7 am","8 am","9 am","10 am","11 am","12 pm","1 pm","2 pm","3 pm","4 pam","5 pam","6 pm","7 pm","111"];
+
 for (let i =0; i<copycat.length;i++){
 let totalperhour=0;
 for(let x=0;x<places.length;x++){
