@@ -1,11 +1,9 @@
 'use strict';
-
 const OpenHours = ["6 am","7 am","8 am","9 am","10 am","11 am","12 pm","1 pm","2 pm","3 pm","4 pam","5 pam","6 pm","7 pm",];
 let places=[];
 function randomiser(max,min){
 return Math.floor(Math.random() *( max-min + 1) + min);
 }
-
 
 function placeName(Location , MinCustomers , MaxCustomers , CookiesAvg ){
 
@@ -13,7 +11,6 @@ this.Location = Location;
 this.MinCustomers = MinCustomers;
 this.MaxCustomers = MaxCustomers;
 this.CookiesAvg = CookiesAvg;
-
 
 this.CookiesEveryHour=[];
 this.CustomersPerHour=[];
@@ -23,7 +20,6 @@ console.log(this);
 places.push(this);
 }
 
-
 placeName.prototype.calcCustomersPerHour =function(){
 
 for (let i=0; i<OpenHours.length;i++){
@@ -32,7 +28,6 @@ this.CustomersPerHour.push(randomiser(this.MaxCustomers,this.MinCustomers));
 }
 }
 
-
 placeName.prototype.calcCookiesEveryHour =function(){
 for (let i=0; i<OpenHours.length; i++){
 this.CookiesEveryHour.push(Math.floor(this.CookiesAvg * this.CustomersPerHour[i]));
@@ -40,7 +35,6 @@ this.CookiesEveryHour.push(Math.floor(this.CookiesAvg * this.CustomersPerHour[i]
 this.CookiesEveryDay += this.CookiesEveryHour[i];
 
 }
-
 
 
 }
@@ -67,11 +61,9 @@ lima.calcCookiesEveryHour();
 
 
 
-
 let parent = document.getElementById('parent');
 let table=document.createElement('table');
 parent.appendChild(table);
-
 
 console.log(parent);
 
@@ -94,7 +86,6 @@ tableth.textContent=copycat[i];
   
 header();
 
-
 placeName.prototype.render=function(){
 
 let Raws = document.createElement('tr');
@@ -112,7 +103,6 @@ for(let i=0;i<copycat.length;i++){
     Raws.appendChild(newtdElements);
     newtdElements.textContent=this.CookiesEveryHour[i]
 
-
 }
 let locationtotal=document.createElement('td');
 Raws.appendChild(locationtotal);
@@ -121,10 +111,8 @@ locationtotal.textContent=this.CookiesEveryDay;
 }
 
 
-
 for(let i=0;i<places.length;i++){
 places[i].render();}
-
 
 
 
@@ -139,13 +127,12 @@ let lastTh=document.createElement('th');
 lastRow.appendChild(lastTh);
 lastTh.textContent='totals';
 
-let copycat=["6 am","7 am","8 am","9 am","10 am","11 am","12 pm","1 pm","2 pm","3 pm","4 pam","5 pam","6 pm","7 pm","111"];
+let copycat=["6 am","7 am","8 am","9 am","10 am","11 am","12 pm","1 pm","2 pm","3 pm","4 pam","5 pam","6 pm","7 pm"];
 
 for (let i =0; i<copycat.length;i++){
 let totalperhour=0;
 for(let x=0;x<places.length;x++){
     totalperhour +=places[x].CookiesEveryHour[i];}
-
 
     let lastThtotal=document.createElement('th');
 
@@ -160,11 +147,47 @@ thelastraw();
 
 
 
+let formlistener =document.getElementById('eventFORM');
+
+formlistener.addEventListener('submit' ,eventfield);
+
+function eventfield(event){
+event.preventDefault();
+console.log('new lab 9',event);
+let locationName = event.target.Ltext.value;
+console.log('locationName');
+let MinCustomers =Number(event.target.minCusTomer.value);
+console.log('MinCustomers');
+let MaxCustomers =Number(event.target.maxCusTomer.value);
+console.log('MaxCustomers');
+let CookiesAvg =Number(event.target.avgCC.value);
+console.log('avgCCookiesnum');
+
+
+let YourNewLoction = new placeName ( locationName , MinCustomers , MaxCustomers , CookiesAvg );
+let eventmain=["6 am","7 am","8 am","9 am","10 am","11 am","12 pm","1 pm","2 pm","3 pm","4 pam","5 pam","6 pm","7 pm"];
+for (let i = 0; i <eventmain.length ; i++) {
+
+
+
+
+YourNewLoction.calcCustomersPerHour(i);
+YourNewLoction.calcCookiesEveryHour(i);
+
+}
+YourNewLoction.render();
+thelastraw();
+}
+
+
+
+
+
+
 
 //places[i].calcCustomersPerHour();
 //places[i].calcCookiesEveryHour();
 /*
-
 
 function random(min,max){
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -202,7 +225,6 @@ theparent.appendChild(storeName);
 
 storeName.textContent=this.location;
 
-
 let unorderedlist = document.createElement('ul');
 theparent.appendChild(unorderedlist);
 
@@ -222,7 +244,6 @@ console.log(tokyo);
 tokyo.calcCustomersPerHour();
 tokyo.calcCookiesPerHour();
 tokyo.renderfunction();
-
 
 
 
@@ -264,7 +285,6 @@ theparent.appendChild(storeName);
 
 storeName.textContent=this.location;
 
-
 let unorderedlist = document.createElement('ul');
 theparent.appendChild(unorderedlist);
 
@@ -284,7 +304,6 @@ console.log(Dubai);
 Dubai.calcCustomersPerHour();
 Dubai.calcCookiesPerHour();
 Dubai.renderfunction();
-
 
 
 
@@ -326,7 +345,6 @@ theparent.appendChild(storeName);
 
 storeName.textContent=this.location;
 
-
 let unorderedlist = document.createElement('ul');
 theparent.appendChild(unorderedlist);
 
@@ -346,7 +364,6 @@ console.log(Paris);
     Paris.calcCustomersPerHour();
     Paris.calcCookiesPerHour();
 Paris.renderfunction();
-
 
 
 
@@ -386,7 +403,6 @@ theparent.appendChild(storeName);
 
 storeName.textContent=this.location;
 
-
 let unorderedlist = document.createElement('ul');
 theparent.appendChild(unorderedlist);
 
@@ -406,6 +422,5 @@ console.log(Lima);
 Lima.calcCustomersPerHour();
 Lima.calcCookiesPerHour();
 Lima.renderfunction();
-
 
 */
