@@ -185,6 +185,7 @@ thelastraw();
 
 
 
+
 //places[i].calcCustomersPerHour();
 //places[i].calcCookiesEveryHour();
 /*
@@ -423,4 +424,6 @@ Lima.calcCustomersPerHour();
 Lima.calcCookiesPerHour();
 Lima.renderfunction();
 
+
 */
+
