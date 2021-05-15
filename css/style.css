@@ -5,14 +5,23 @@ padding: 10px;
 margin: 20px;
 border-radius: 30px;
 }
+table{
+    margin-left: 505px;
+    width: 50%;
+    weight:800px;
+    height:300px;
+}
+
+
 
 
 table, th, td{
     border:2px solid whitesmoke;
 background-color:darkgray;
-color:cornsilk;
+text-align: center;
+color:cornsilk;}
 
-}
+
 
 
 h2{color:red;}
@@ -60,5 +69,8 @@ color:teal;
 
 
 }
+
+
+#newtable{border-width: 10px;}
 
 
